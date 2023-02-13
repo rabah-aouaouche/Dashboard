@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashbord</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <!-- offcanvas trigger -->
+        <button
+          class="navbar-toggler me-2"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
+          <span
+            class="navbar-toggler-icon"
+            data-bs-target="offcanvasExample"
+          ></span>
+        </button>
+
+        <!-- offcavas trigger -->
+        <a class="navbar-brand fw-bold text-uppercase me-auto" href="/"
+          >Dashboard</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search" method="post" action="/">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              name="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- offcanvas -->
+
+    <div
+      class="offcanvas offcanvas-start bg-dark text-white sidebar-nav"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="small fw-bold text-white text-uppercase px-3">
+                CORE
+              </div>
+            </li>
+            <li>
+              <a href="#" class="nav-link px-3 active">
+                <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="my-4">
+              <hr class="dropdown-divider" />
+            </li>
+            <li class="nav-item">
+              <div class="small fw-bold text-white text-uppercase px-3">
+                Interface
+              </div>
+            </li>
+
+            <li>
+              <a
+                class="nav-link px-3 sidebar-Link"
+                data-bs-toggle="collapse"
+                href="#collapseExample"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <span class="me-2">
+                  <i class="bi bi-layout-split"></i>
+                </span>
+                <span>Patient</span>
+
+                <span class="right-icon ms-auto"
+                  ><i class="bi bi-chevron-down"></i
+                ></span>
+              </a>
+
+              <div class="collapse" id="collapseExample">
+                <div>
+                  <ul class="navbar-nav ps-3">
+                    <li>
+                      <a
+                        href="/home"
+                        type="button"
+                        class="btn btn-light btn-small"
+                      >
+                        <i class="bi bi-eye"></i> Liste Patient</a
+                      >
+                      <a
+                        href="/addpatient"
+                        type="button"
+                        class="btn btn-primary align-self-center"
+                      >
+                        + add patient</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                class="nav-link px-3 sidebar-Link"
+                data-bs-toggle="collapse"
+                href="#collapseExamplee"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExamplee"
+              >
+                <span class="me-2">
+                  <i class="bi bi-layout-split"></i>
+                </span>
+                <span>rendez-vous</span>
+
+                <span class="right-icon ms-auto"
+                  ><i class="bi bi-chevron-down"></i
+                ></span>
+              </a>
+              <div class="collapse" id="collapseExamplee">
+                <div>
+                  <ul class="navbar-nav ps-3">
+                    <li>
+                      <a
+                        href="/RDV"
+                        type="button"
+                        class="btn btn-light btn-small"
+                      >
+                        <i class="bi bi-eye"></i> Liste RDV</a
+                      >
+                      <a
+                        href="/addrendezvous"
+                        type="button"
+                        class="btn btn-warning align-self-center"
+                      >
+                        + add RDV</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- offcanvas -->
+    <main class="mt-5 pt-3">
+      <div class="container pt-5 pb-5">
+        <div class="row">
+          <div class="col-6"><h1>RENDEZ VOUS</h1></div>
+          <div class="col-6 d-flex justify-content-end">
+            <a
+              href="/addrendezvous"
+              type="button"
+              class="btn btn-primary align-self-center"
+            >
+              + add rendez vous</a
+            >
+          </div>
+        </div>
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">ID_PATIENT</th>
+              <th scope="col">DATE_RDV</th>
+              <th scope="col">HEURE_RDV</th>
+              <th scope="col">PRIS_EN_CHARGE</th>
+              <th scope="col">DISC</th>
+
+              <th scope="col" class="text-end">ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% rows.forEach((p) => { %>
+            <tr>
+              <td><%=p.ID %></td>
+              <td><%=p.ID_PATIENT%></td>
+              <td><%=p.DATE_RDV.toString().slice(4,15 )%></td>
+              <td><%=p.HEURE_RDV %></td>
+              <td><%=p.PRIS_EN_CHARGE%></td>
+              <td><%=p.DISC %></td>
+
+              <td>
+                <a href="#" type="button" class="btn btn-light btn-small">
+                  <i class="bi bi-eye"></i> view</a
+                >
+                <a href="#" type="button" class="btn btn-light btn-small">
+                  <i class="bi bi-pencil"></i> Edit</a
+                >
+                <a
+                  href="#"
+                  type="button"
+                  onclick="onDelete('<%=p.ID%>')"
+                  class="btn btn-light btn-small"
+                >
+                  <i class="bi bi-person-x"></i> Delete</a
+                >
+              </td>
+            </tr>
+            <% })%>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function onDelete(id) {
+        const confirm = window.confirm(
+          "Voulez-vous vraiment supperimer l'utilisateur"
+        );
+        if (confirm) {
+          fetch(`RDV/${id}`, {
+            method: "delete",
+          })
+            .then((res) => {
+              window.location.reload();
+            })
+            .catch((e) => console.log(e));
+        } else {
+          return;
+        }
+      }
+    </script>
+  </body>
+</html>

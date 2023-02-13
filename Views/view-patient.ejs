@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashbord</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Dashboard</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+          <form
+            class="d-flex"
+            role="search"
+            method="post"
+            action="/"
+            novalidate
+          >
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              name="search"
+            />
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <%console.log(rows)%>
+    <div class="container pb-5 pt-5">
+      <nav aria-label="breadcrumb  ">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">
+            View Patient
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="view-patient" p-5>
+      <div class="row mb-5">
+        <div class="col text-center">
+          <% rows.forEach(row => { %>
+
+          <h3><%=row.NOMP %> <%=row.PRENOMP %></h3>
+          <% })%>
+        </div>
+      </div>
+    </div>
+
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOMP</th>
+          <th scope="col">PRENOMP</th>
+          <th scope="col">DATE_DE_NAISSANCE</th>
+          <th scope="col">AGEP</th>
+          <th scope="col">SEXEP</th>
+          <th scope="col">ADRESSE</th>
+          <th scope="col">VILLE</th>
+          <th scope="col">NUM_TEL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% rows.forEach((p) => { %>
+        <tr>
+          <td><%=p.ID %></td>
+          <td><%=p.NOMP%></td>
+          <td><%=p.PRENOMP%></td>
+          <td><%=p.DATE_DE_NAISSANCE.toString().slice(4,15 ) %></td>
+          <td><%=p.AGEP%></td>
+          <td><%=p.SEXEP %></td>
+          <td><%=p.ADRESSE %></td>
+          <td><%=p.VILLE %></td>
+          <td><%=p.NUM_TEL%></td>
+        </tr>
+        <% })%>
+      </tbody>
+    </table>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
